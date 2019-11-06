@@ -1,0 +1,111 @@
+<!Doctype html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <nav id="navbar-change-color" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" onClick="changeNavTheme()">BYU Women's Lacrosse</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="schedule.html">Schedule</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="team.html">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="info.html">Info</a>
+                </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="map.html">Travel</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="youtube.html">Videos</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Fans</a>
+                      <div class="dropdown-menu">
+                          <a class="dropdown-item" href="https://womenslacrosse.byu.edu/blog" target="_blank">Blog</a>
+                          <a class="dropdown-item" href="https://twitter.com/byuwlax" target="_blank">Twitter</a>
+                          <a class="dropdown-item" href="https://www.facebook.com/BYUWomensLacrosse/" target="_blank">Facebook</a>
+                          <a class="dropdown-item" href="https://instagram.com/byuwlax/" target="_blank">Instagram</a>
+                          <a class="dropdown-item" href="https://womenslacrosse.byu.edu/content/store" target="_blank">Store</a>
+                      </div>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+
+        <div id="teamVue">
+            <h2>Roster 2019 - 2020</h2>
+            <hr>
+            <button v-if="!teamMemberInput" v-on:click="teamMemberInput = true">New Team Member</button>
+            <div class="form" v-if="teamMemberInput">
+                <div class="form-row">
+                    <div class="form-header">
+                        <p>Name: </p>
+                        <p>Number: </p>
+                        <p>Position: </p>
+                        <p>Year: </p>
+                    </div>
+                    <div class="form-body">
+                        <p><input v-model="newName" type="text"></p>
+                        <p><input v-model="newNumber" type="text"></p>
+                        <p><input v-model="newPosition" type="text"></p>
+                        <p><input v-model="newYear" type="text"></p>
+                    </div>
+                </div>
+                <button v-on:click="addTeamMember()">Add</button>
+            </div>
+            <div v-if="addError" style="color: red;">
+                <p>Cannot add team member: {{this.errorMessage}}</p>
+            </div>
+            <table v-if="hasTeam" class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Position</th>
+                    <th scope="col">Year</th>
+                </tr>
+                </thead>
+                <tbody v-for="teamMember in sortedTeamMembers">
+                <tr class="tr-even">
+                    <th scope="row">{{teamMember.number}}</th>
+                    <td>{{teamMember.name}}</td>
+                    <td>{{teamMember.position}}</td>
+                    <td>{{teamMember.year}}
+                        <button style="float: right;" v-on:click="removeTeamMember(teamMember.number)">x</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="block-light">
+            <h2>Staff</h2>
+            <hr>
+            <p><strong>Head Coach:</strong> Nikki Dabrowski</p>
+            <p><strong>Assistant Coach:</strong> Summer Stephenson</p>
+            <p><strong>Athletic Trainer:</strong> John Stutznegger</p>
+        </div>
+        <div class="block block-footer">
+            <footer>
+                <a href="https://github.com/becaha/womenslacrosse.git" target="_blank">GitHub Classroom Repo</a>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+        <script src="code/team.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lacrosse Videos</title>
+<!--    putting bootstrap last will get bootstrap text-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<nav id="navbar-change-color" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" onClick="changeNavTheme()">BYU Women's Lacrosse</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="info.html">Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="map.html">Travel</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="youtube.html">Videos</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Fans</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://womenslacrosse.byu.edu/blog" target="_blank">Blog</a>
+                    <a class="dropdown-item" href="https://twitter.com/byuwlax" target="_blank">Twitter</a>
+                    <a class="dropdown-item" href="https://www.facebook.com/BYUWomensLacrosse/" target="_blank">Facebook</a>
+                    <a class="dropdown-item" href="https://instagram.com/byuwlax/" target="_blank">Instagram</a>
+                    <a class="dropdown-item" href="https://womenslacrosse.byu.edu/content/store" target="_blank">Store</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="navbar-secondary">
+    <button type="button" onclick="setVideo('qCqSeXd2Qog')">Power Shooting</button>
+    <button type="button" onclick="setVideo('w-i1JXrbqv4')">Utah State Game 2018</button>
+    <button type="button" onclick="setVideo('t9sYaViPyCk')">Stick Skills</button>
+</div>
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<div class="page-center">
+    <div id="player"></div>
+</div>
+
+<div class="block block-footer-map">
+    <footer>
+        <a href="https://github.com/becaha/womenslacrosse.git" target="_blank">GitHub Classroom Repo</a>
+    </footer>
+</div>
+
+<script src="code/youtube.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
