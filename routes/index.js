@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var TeamMember = mongoose.model('TeamMember');
 
-var teamMembers = [
+var defaultTeamMembers = [
     {
         name: 'Kallie Rice',
         number: '3',
@@ -40,30 +42,110 @@ var teamMembers = [
     }
 ];
 
+router.param('teamMember', function(req, res, next, id) {
+  var query = TeamMember.findById(id);
+  query.exec(function (err, teamMember){
+    if (err) { return next(err); }
+    if (!teamMember) { return next(new Error("can't find teamMember")); }
+    req.teamMember= teamMember;
+    return next();
+  });
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/players',function(req,res,next) {
-    console.log("backend get players");
-    res.send(teamMembers);
+router.get('/players', function(req, res, next) {
+  TeamMember.find(function(err, teamMembers){
+    if(err){ return next(err); }
+    console.log('players', teamMembers);
+    if (teamMembers.length == 0) {
+        for (const player of defaultTeamMembers) {
+            var teamMember = new TeamMember(player);
+            console.log('add player', teamMember);
+            teamMember.save(function(err, teamMember){
+                if(err){ console.error(err); }
+                // res.json(teamMember);
+              });
+        }
+    }
+    res.json(teamMembers);
+  });
 });
 
 router.post('/player', function(req, res) {
-    console.log("backend player post");
-    console.log(req.body);
-    teamMembers.push(req.body);
-    res.end('{"success" : "Updated Successfully", "status" : 200}');
+    var teamMember = new TeamMember(req.body);
+    console.log('add player', teamMember);
+    teamMember.save(function(err, teamMember){
+        if(err){ console.error(err); }
+        res.json(teamMember);
+      });
 }); 
 
-router.post('/removePlayer', function(req, res) {
-    console.log("backend remove player post");
-    console.log(req.body);
-    teamMembers = teamMembers.filter(member => {
-        return member.number !== req.body.number;
-    });
-    res.end('{"success" : "Updated Successfully", "status" : 200}');
+router.delete('/removePlayer/:teamMember',function(req,res) {
+  console.log('del', req.teamMember);
+  req.teamMember.remove();
+  res.sendStatus(200);
+});
+
+var Game = mongoose.model('Game');
+
+router.param('game', function(req, res, next, id) {
+  var query = Game.findById(id);
+  query.exec(function (err, game){
+    if (err) { return next(err); }
+    if (!game) { return next(new Error("can't find game")); }
+    req.game= game;
+    return next();
+  });
+});
+
+router.get('/games', function(req, res, next) {
+  Game.find(function(err, games){
+    if(err){ return next(err); }
+    console.log('games', games);
+    res.json(games);
+  });
+});
+
+router.post('/game', function(req, res) {
+    var gameBody = noEmpty(req.body);
+    var game = new Game(gameBody);
+    console.log('add game', game);
+    game.save(function(err, game){
+        if(err){ console.error(err); }
+        res.json(game);
+      });
 }); 
+
+var noEmpty = function(gameBody) {
+    var noEmptyBody = {};
+    noEmptyBody.opponent = gameBody.opponent;
+    if (gameBody.date != '') {
+        noEmptyBody.date = gameBody.date;
+    }
+    if (gameBody.time != '') {
+        noEmptyBody.time = gameBody.time;
+    }
+    if (gameBody.loc != '') {
+        noEmptyBody.loc = gameBody.loc;
+    }
+    if (gameBody.city != '') {
+        noEmptyBody.city = gameBody.city;
+    }
+    if (gameBody.score != '') {
+        noEmptyBody.score = gameBody.score;
+    }
+    return noEmptyBody;
+}
+
+router.delete('/removeGame/:game',function(req,res) {
+  console.log('del', req.game);
+  req.game.remove();
+  res.sendStatus(200);
+});
+
 
 module.exports = router;

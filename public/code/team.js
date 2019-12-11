@@ -36,9 +36,8 @@ let teamVue = new Vue({
     },
     methods: {
         async getPlayers() {
-          // `this` points to the vm instance
           console.log("get players");
-          var url = "http://cs260.dnoting.com:4200/players";
+          var url = "http://cs260.dnoting.com:8080/players";
           try {
             let response = await axios.get(url);
             this.teamMembers = response.data;
@@ -49,7 +48,7 @@ let teamVue = new Vue({
           }
         },
         addTeamMember() {
-            var url = "http://cs260.dnoting.com:4200/player";
+            var url = "http://cs260.dnoting.com:8080/player";
             if (this.validMember) {
                 axios.post(url, {
                     name: this.newName,
@@ -75,16 +74,20 @@ let teamVue = new Vue({
             this.newYear = '';
             this.getPlayers();
         },
-        removeTeamMember(number) {
-            var url = "http://cs260.dnoting.com:4200/removePlayer";
-            axios.post(url, {
-                number: number
-            }).then(response => {
-                
-            }).catch(error => {
-                console.log(error);
-            });
-            this.getPlayers();
+        removeTeamMember(teamMember) {
+            var index = this.teamMembers.indexOf(teamMember);
+              if (index > -1) {
+                var url = "http://cs260.dnoting.com:8080/removePlayer/" + teamMember._id;
+                axios.delete(url)
+                  .then(response => {
+                    // console.log(response.data.votes);
+                    this.getPlayers();
+                  })
+                  .catch(e => {
+                    console.log(e);
+                  });
+                console.log("URL " + url);
+              }
         }
     },
 });

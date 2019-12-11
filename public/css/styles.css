@@ -135,6 +135,10 @@ footer {
     padding: 5px;
 }
 
+.form-large {
+    height: 230px;
+}
+
 .form-header {
     height: 100%;
     display: flex;
@@ -183,13 +187,17 @@ thead {
     background-color: var(--color-medium2);
 }
 
+#scheduleVue {
+    margin-left: 10px;
+}
+
 .table {
     margin: auto;
     border: 2px solid var(--color-dark);
 }
 
 .table-small {
-    width: fit-content;
+    /*width: ;*/
 }
 
 .section {
