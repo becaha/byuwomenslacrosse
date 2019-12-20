@@ -12,6 +12,7 @@ let teamVue = new Vue({
         newLoc: '',
         newCity: '',
         newScore: '',
+        edit: false
     },
     created: function(){
       this.getGames();  
@@ -33,6 +34,9 @@ let teamVue = new Vue({
         }
     },
     methods: {
+        editTable() {
+          this.edit = true;
+        },
         async getGames() {
           console.log("get games");
           var url = "http://cs260.dnoting.com:8080/games";
@@ -76,6 +80,25 @@ let teamVue = new Vue({
             this.newCity = '';
             this.newScore = '';
             this.getGames();
+        },
+        editGame(game) {
+          var url = "http://cs260.dnoting.com:8080/game";
+          axios.post(url, {
+                    opponent: this.newOpponent,
+                    date: this.newDate,
+                    time: this.newTime,
+                    loc: this.newLoc,
+                    city: this.newCity,
+                    score: this.newScore
+                })
+                .then(response => {
+                    this.gameInput = false;
+                    this.addError = false;
+                })
+                .catch(e => {
+                    console.log(e);
+                    this.addError = true;
+                });
         },
         removeGame(game) {
             var index = this.games.indexOf(game);

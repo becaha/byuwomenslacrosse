@@ -16,5 +16,270 @@ WARNING: The `useMongoClient` option is no longer necessary in mongoose 5.x, ple
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
     at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
-(node:29680) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
-(node:29680) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(node:5169) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+(node:5169) DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+[0mGET /schedule.html [32m200 [0m6.225 ms - 9095[0m
+[0mGET /css/styles.css [36m304 [0m0.898 ms - -[0m
+[0mGET /code/schedule.js [36m304 [0m0.305 ms - -[0m
+games [ { date: 'March 28',
+    time: '',
+    loc: 'BYU',
+    city: 'Provo, UT',
+    score: '--',
+    _id: 5df08351787f516de22492d8,
+    opponent: 'U of U',
+    __v: 0 },
+  { date: 'April 4',
+    time: '',
+    loc: 'UVU',
+    city: 'Orem, UT',
+    score: '--',
+    _id: 5df084535696286f77492309,
+    opponent: 'UVU',
+    __v: 0 },
+  { date: 'April 4',
+    time: '',
+    loc: 'UVU',
+    city: 'Orem, UT',
+    score: '--',
+    _id: 5df084655696286f7749230a,
+    opponent: 'Weber State University',
+    __v: 0 } ]
+[0mGET /games [36m304 [0m23.588 ms - -[0m
+[0mGET /index.html [32m200 [0m0.649 ms - 4520[0m
+[0mGET /css/styles.css [36m304 [0m0.333 ms - -[0m
+[0mGET /code/code.js [36m304 [0m0.222 ms - -[0m
+[0mGET /images/byunationals.jpg [36m304 [0m0.340 ms - -[0m
+[0mGET /team.html [32m200 [0m0.506 ms - 6113[0m
+[0mGET /css/styles.css [36m304 [0m0.339 ms - -[0m
+[0mGET /code/team.js [36m304 [0m0.219 ms - -[0m
+players [ { _id: 5defc89950dd373ef637d72b,
+    name: 'Kallie Rice',
+    number: 3,
+    position: 'Midfield',
+    year: 'Sophomore',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72c,
+    name: 'Haley Harris',
+    number: 5,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72d,
+    name: 'Logan Coon',
+    number: 20,
+    position: 'Midfield',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72e,
+    name: 'Sarah Ludlow',
+    number: 10,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72f,
+    name: 'Julia Haws',
+    number: 27,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d730,
+    name: 'Kim Meacham',
+    number: 19,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc8c350dd373ef637d731,
+    name: 'Shannon Baker',
+    number: 23,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 } ]
+[0mGET /players [36m304 [0m4.837 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m201.308 ms - 1697[0m
+[0mGET / [36m304 [0m0.851 ms - -[0m
+[0mGET /css/styles.css [36m304 [0m0.427 ms - -[0m
+[0mGET /code/code.js [36m304 [0m0.212 ms - -[0m
+[0mGET /images/byunationals.jpg [36m304 [0m0.239 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m12.379 ms - 1697[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157608810167864PC005126554608080 [33m404 [0m24.362 ms - 1692[0m
+[0mGET /favicon.ico [33m404 [0m21.634 ms - 1697[0m
+[0mGET / [36m304 [0m0.457 ms - -[0m
+[0mGET /css/styles.css [36m304 [0m0.362 ms - -[0m
+[0mGET /code/code.js [36m304 [0m0.227 ms - -[0m
+[0mGET /images/byunationals.jpg [36m304 [0m0.277 ms - -[0m
+[0mGET /favicon.ico [33m404 [0m11.728 ms - 1697[0m
+[0mGET / [32m200 [0m0.794 ms - 4520[0m
+[0mGET /css/styles.css [32m200 [0m0.575 ms - 3066[0m
+[0mGET /code/code.js [32m200 [0m0.313 ms - 933[0m
+[0mGET /images/byunationals.jpg [32m200 [0m0.474 ms - 71087[0m
+[0mGET /favicon.ico [33m404 [0m15.068 ms - 1697[0m
+[0mGET /schedule.html [32m200 [0m0.445 ms - 9095[0m
+[0mGET /css/styles.css [36m304 [0m0.315 ms - -[0m
+[0mGET /code/schedule.js [32m200 [0m0.336 ms - 3413[0m
+games [ { date: 'March 28',
+    time: '',
+    loc: 'BYU',
+    city: 'Provo, UT',
+    score: '--',
+    _id: 5df08351787f516de22492d8,
+    opponent: 'U of U',
+    __v: 0 },
+  { date: 'April 4',
+    time: '',
+    loc: 'UVU',
+    city: 'Orem, UT',
+    score: '--',
+    _id: 5df084535696286f77492309,
+    opponent: 'UVU',
+    __v: 0 },
+  { date: 'April 4',
+    time: '',
+    loc: 'UVU',
+    city: 'Orem, UT',
+    score: '--',
+    _id: 5df084655696286f7749230a,
+    opponent: 'Weber State University',
+    __v: 0 } ]
+[0mGET /games [32m200 [0m4.091 ms - 415[0m
+[0mGET /team.html [32m200 [0m0.402 ms - 6113[0m
+[0mGET /code/team.js [32m200 [0m0.438 ms - 2907[0m
+[0mGET /css/styles.css [36m304 [0m0.202 ms - -[0m
+players [ { _id: 5defc89950dd373ef637d72b,
+    name: 'Kallie Rice',
+    number: 3,
+    position: 'Midfield',
+    year: 'Sophomore',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72c,
+    name: 'Haley Harris',
+    number: 5,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72d,
+    name: 'Logan Coon',
+    number: 20,
+    position: 'Midfield',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72e,
+    name: 'Sarah Ludlow',
+    number: 10,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72f,
+    name: 'Julia Haws',
+    number: 27,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d730,
+    name: 'Kim Meacham',
+    number: 19,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc8c350dd373ef637d731,
+    name: 'Shannon Baker',
+    number: 23,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 } ]
+[0mGET /players [32m200 [0m4.316 ms - 794[0m
+[0mGET /info.html [32m200 [0m0.427 ms - 4529[0m
+[0mGET /images/NUF.jpg [32m200 [0m0.478 ms - 45252[0m
+[0mGET /images/ipf.jpg [32m200 [0m0.308 ms - 24261[0m
+[0mGET /css/styles.css [36m304 [0m0.282 ms - -[0m
+[0mGET /code/code.js [36m304 [0m0.239 ms - -[0m
+[0mGET /map.html [32m200 [0m0.392 ms - 4258[0m
+[0mGET /css/styles.css [36m304 [0m0.291 ms - -[0m
+[0mGET /code/map.js [32m200 [0m0.340 ms - 2855[0m
+[0mGET /youtube.html [32m200 [0m0.441 ms - 3795[0m
+[0mGET /css/styles.css [36m304 [0m0.360 ms - -[0m
+[0mGET /code/youtube.js [32m200 [0m0.922 ms - 1435[0m
+[0mGET /team.html [36m304 [0m0.305 ms - -[0m
+[0mGET /css/styles.css [36m304 [0m0.318 ms - -[0m
+[0mGET /code/team.js [36m304 [0m0.198 ms - -[0m
+players [ { _id: 5defc89950dd373ef637d72b,
+    name: 'Kallie Rice',
+    number: 3,
+    position: 'Midfield',
+    year: 'Sophomore',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72c,
+    name: 'Haley Harris',
+    number: 5,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72d,
+    name: 'Logan Coon',
+    number: 20,
+    position: 'Midfield',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72e,
+    name: 'Sarah Ludlow',
+    number: 10,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d72f,
+    name: 'Julia Haws',
+    number: 27,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc89950dd373ef637d730,
+    name: 'Kim Meacham',
+    number: 19,
+    position: 'Defense',
+    year: 'Senior',
+    __v: 0 },
+  { _id: 5defc8c350dd373ef637d731,
+    name: 'Shannon Baker',
+    number: 23,
+    position: 'Attack',
+    year: 'Senior',
+    __v: 0 } ]
+[0mGET /players [36m304 [0m3.202 ms - -[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157610254435395PC005126554608080 [33m404 [0m10.655 ms - 1692[0m
+[0mGET http://example.com/ [32m200 [0m0.472 ms - 4520[0m
+[0mGET http://169.254.169.254/ [32m200 [0m0.423 ms - 4520[0m
+[0mGET http://[::ffff:a9fe:a9fe]/ [32m200 [0m0.484 ms - 4520[0m
+[0mGET http://169.254.169.254/latest/dynamic/instance-identity/document [33m404 [0m6.886 ms - 1697[0m
+[0mGET http://[::ffff:a9fe:a9fe]/latest/dynamic/instance-identity/document [33m404 [0m6.388 ms - 1697[0m
+[0mGET / [32m200 [0m0.464 ms - 4520[0m
+[0mGET / [32m200 [0m0.430 ms - 4520[0m
+[0mGET / [32m200 [0m0.387 ms - 4520[0m
+[0mGET /latest/dynamic/instance-identity/document [33m404 [0m18.011 ms - 1697[0m
+[0mGET /latest/dynamic/instance-identity/document [33m404 [0m19.866 ms - 1697[0m
+[0mGET / [32m200 [0m0.408 ms - 4520[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157611694483921PC005126554608080 [33m404 [0m7.959 ms - 1692[0m
+[0mGET / [32m200 [0m0.392 ms - 4520[0m
+[0mGET /HNAP1/ [33m404 [0m23.826 ms - 1697[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157613120535218PC005126554608080 [33m404 [0m22.537 ms - 1692[0m
+[0mGET / [32m200 [0m0.452 ms - 4520[0m
+[0mGET / [32m200 [0m0.446 ms - 4520[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157614565893720PC005126554608080 [33m404 [0m16.968 ms - 1692[0m
+[0mGET / [32m200 [0m0.392 ms - 4520[0m
+[0mGET http://example.com/ [32m200 [0m0.432 ms - 4520[0m
+[0mGET http://169.254.169.254/ [32m200 [0m0.386 ms - 4520[0m
+[0mGET http://[::ffff:a9fe:a9fe]/ [32m200 [0m0.440 ms - 4520[0m
+[0mGET http://169.254.169.254/latest/dynamic/instance-identity/document [33m404 [0m9.965 ms - 1697[0m
+[0mGET http://[::ffff:a9fe:a9fe]/latest/dynamic/instance-identity/document [33m404 [0m5.208 ms - 1697[0m
+[0mGET / [32m200 [0m0.430 ms - 4520[0m
+[0mGET / [32m200 [0m0.390 ms - 4520[0m
+[0mGET / [32m200 [0m0.430 ms - 4520[0m
+[0mGET /latest/dynamic/instance-identity/document [33m404 [0m21.759 ms - 1697[0m
+[0mGET /latest/dynamic/instance-identity/document [33m404 [0m5.325 ms - 1697[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157615998847776PC005126554608080 [33m404 [0m7.633 ms - 1692[0m
+[0mGET / [32m200 [0m0.454 ms - 4520[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157617447601735PC005126554608080 [33m404 [0m13.392 ms - 1692[0m
+[0mGET / [32m200 [0m0.452 ms - 4520[0m
+[0mGET /admin/connection/ [33m404 [0m4.963 ms - 1697[0m
+[0mPOST http://check.best-proxies.ru/azenv.php?s=157618895639451PC005126554608080 [33m404 [0m18.690 ms - 1692[0m
+[0mGET / [32m200 [0m0.403 ms - 4520[0m
+[0mGET /favicon.ico [33m404 [0m6.080 ms - 1697[0m

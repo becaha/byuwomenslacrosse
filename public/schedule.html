@@ -74,6 +74,7 @@
                 <div v-if="addError" style="color: red;">
                     <p>Cannot add game: {{this.errorMessage}}</p>
                 </div>
+                <!--<button v-if="!edit" v-on:click="edit = true">Edit Table</button>-->
                 <table v-if="hasGames" class="table table-small">
                     <thead>
                     <tr>
@@ -86,11 +87,18 @@
                     </thead>
                     <tbody v-for="game in sortedGames">
                     <tr class="tr-even">
-                        <td>{{game.opponent}}</th>
-                        <td>{{game.date}} {{game.time}}</td>
-                        <td>{{game.loc}}</td>
-                        <td>{{game.city}}</td>
-                        <td>{{game.score}}
+                        <td><input v-if="edit" v-model="newOpponent" type="text">
+                            <p v-if="!edit">{{game.opponent}}</p></td>
+                        <td><input v-if="edit" v-model="newDate" type="text"> 
+                            <input v-if="edit" v-model="newTime" type="text">
+                            <p v-if="!edit">{{game.date}} {{game.time}}</p></td>
+                        <td><input v-if="edit" v-model="newLoc" type="text">
+                            <p v-if="!edit">{{game.date}} {{game.time}}</p></td>
+                        <td><input v-if="edit" v-model="newCity" type="text">
+                            <p v-if="!edit">{{game.date}} {{game.time}}</p></td>
+                        <td><input v-if="edit" v-model="newScore" type="text">
+                            <p v-if="!edit">{{game.date}} {{game.time}}</p>
+                            <button v-if="edit" style="float: right;" v-on:click="editGame(game)">Save</button>
                             <button style="float: right;" v-on:click="removeGame(game)">x</button>
                         </td>
                     </tr>
